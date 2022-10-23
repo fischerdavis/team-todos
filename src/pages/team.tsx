@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import AddTeamMembers from "../components/AddTeamMembers";
-import ViewTeamMembers from "../components/ViewTeamMembers";
 import CreateUser from "../components/CreateUser";
 
 const Team = () => {
@@ -12,9 +11,6 @@ const Team = () => {
         </div>
         <div className="border rounded mr-10 p-14">
           <AddTeamMembers />
-        </div>
-        <div className="border rounded p-14">
-          <ViewTeamMembers />
         </div>
       </div>
     </>
