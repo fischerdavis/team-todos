@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { trpc } from "../utils/trpc";
 
 const AddTeamMembers = () => {
+
+  const {data: users, isLoading} = trpc.user.getAll.useQuery();
 
   const [search, setSearch] = useState<string>('');
 
@@ -10,7 +13,7 @@ const AddTeamMembers = () => {
 
   return (
     <div>
-      <form>
+      <form className="flex">
         <input
           value={search}
           className="w-80 h-10 border rounded mr-4 pl-2"
@@ -26,7 +29,19 @@ const AddTeamMembers = () => {
       </form>
 
       <div className="pt-8">
-        List
+        {
+          isLoading
+            ? <h1>Loading...</h1>
+            : <>
+              {
+                users?.map((user) => (
+                  <div key={user.id} className="border rounded mb-1 p-2 pl-4">
+                    <div>{user.name}</div>
+                  </div>
+                ))
+              }
+            </>
+        }
       </div>
     </div>
   );
