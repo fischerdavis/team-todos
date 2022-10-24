@@ -9,18 +9,20 @@ const NavBar = () => (
           Todos
         </div>
       </Link>
-      <Link href='/team'>
+      <Link href='/teams'>
         <div className="rounded hover:bg-slate-600 p-2 cursor-pointer">
-          Team
+          Teams
         </div>
       </Link>
     </div>
     <div className="flex gap-4 mr-6">
-      <div
-        className="p-2 w-16 text-center rounded bg-indigo-600 text-white hover:bg-indigo-500 cursor-pointer"
-      >
-        Login
-      </div>
+      <Link href="/login">
+        <div
+          className="p-2 w-16 text-center rounded bg-indigo-600 text-white hover:bg-indigo-500 cursor-pointer"
+        >
+          Login
+        </div>
+      </Link>
     </div>
   </div>
 );

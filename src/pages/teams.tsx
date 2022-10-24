@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import AddTeamMembers from "../components/AddTeamMembers";
 import CreateUser from "../components/CreateUser";
 
-const Team = () => {
+const Teams = () => {
   return (
     <>
       <div className="flex justify-center p-20 pt-10">
@@ -17,4 +17,4 @@ const Team = () => {
   );
 };
 
-export default Team;
+export default Teams;
